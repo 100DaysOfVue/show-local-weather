@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <modal />
+    <!-- <modal /> -->
+    <weather/>
   </div>
 </template>
 
 <script>
 import Modal from './components/Modal.vue'
+import Weather from './components/Weather.vue';
 
 export default {
   name: 'app',
   components: {
-    Modal
+    Modal,
+    Weather
   }
 }
 </script>
@@ -24,7 +27,9 @@ body, html{
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  height: 100%;
 }
+/* modal component */
 .modal__overlay{
   background: rgba(0, 0, 0, .8);
   position: fixed;
@@ -62,5 +67,26 @@ body, html{
 }
 .btn:active{
   transform: scale(.9);
+}
+/* Weather component */
+.weather{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.weather__search{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.weather__search__field{
+  padding: .5em;
+  width: 100px;
+  transition: .3s
+}
+.weather__search__field:focus{
+  width: 250px;
 }
 </style>
