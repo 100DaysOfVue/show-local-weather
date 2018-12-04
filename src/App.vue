@@ -8,7 +8,7 @@
 
 <script>
 import Modal from './components/Modal.vue'
-import Weather from './components/Weather.vue';
+import Weather from './components/Weather.vue'
 
 export default {
   name: 'app',
@@ -76,17 +76,17 @@ body, html{
   align-items: center;
   text-align: center;
 }
-.weather__search{
+.search{
   position: absolute;
   right: 0;
   top: 0;
 }
-.weather__search__field{
+.search__field{
   padding: .5em;
   width: 100px;
   transition: .3s
 }
-.weather__search__field:focus{
+.search__field:focus{
   width: 250px;
 }
 </style>

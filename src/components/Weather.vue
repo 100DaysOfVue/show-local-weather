@@ -5,14 +5,17 @@
       <p>Local Weather</p>
       <p>Some description</p>
     </div>
-    <div class="weather__search">
-      <input type="text" placeholder="Washintong, Dc" class="weather__search__field">
-    </div>
+    <search />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'weather'
+import Search from './Search.vue'
+
+export default {
+  name: 'weather',
+  components: {
+    Search
   }
+}
 </script>
