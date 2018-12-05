@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <modal /> -->
-    <weather/>
+    <modal v-if="!this.show || this.show === 'search'"
+      :show="show"
+      @changeShow="changeShow"
+    />
+    <Weather v-else/>
   </div>
 </template>
 
@@ -15,6 +17,16 @@ export default {
   components: {
     Modal,
     Weather
+  },
+  data () {
+    return {
+      show: ''
+    }
+  },
+  methods: {
+    changeShow (changeTo) {
+      this.show = changeTo
+    }
   }
 }
 </script>
@@ -48,6 +60,7 @@ body, html{
   padding: 2em;
   border-radius: 1.5em;
   text-align: center;
+  position: relative;
 }
 .modal__buttons{
   display: flex;
@@ -76,6 +89,7 @@ body, html{
   align-items: center;
   text-align: center;
 }
+/* search component */
 .search{
   position: absolute;
   right: 0;
