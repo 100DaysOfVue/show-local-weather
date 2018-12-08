@@ -29,6 +29,8 @@ openWeatherMapServices.searchWeatherByCoordinates = function (lat, long, _this) 
       _this.weatherDescription = res.weather[0].description
       _this.city = res.name
       _this.country = res.sys.country
+      _this.tempeture = res.main.temp
+      _this.weatherIcon = `https://openweathermap.org/img/w/${res.weather[0].icon}.png`
     })
     .catch(logError)
 }
