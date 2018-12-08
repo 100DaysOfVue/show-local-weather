@@ -1,9 +1,10 @@
 <template>
   <div class="weather">
     <div class="weather__result">
-      <img src="../assets/logo.png" alt="logo">
-      <p>Local Weather</p>
-      <p>Some description</p>
+      <!-- <h2>weather in {{ city }}, {{ country }}</h2> -->
+      <img :src="weatherIcon" alt="logo">
+      <h2>{{ converTempeture }} <span>°{{ grades }}</span></h2>
+      <p>{{ description }}</p>
     </div>
     <search />
   </div>
@@ -16,6 +17,27 @@ export default {
   name: 'weather',
   components: {
     Search
+  },
+  props: {
+    city: String,
+    country: String,
+    description: String,
+    tempeture: Number,
+    weatherIcon: String
+  },
+  data () {
+    return {
+      grades: 'C'
+    }
+  },
+  computed: {
+    converTempeture () {
+      if (this.grades === 'C') {
+        return Math.round(this.tempeture - 273)
+      } else {
+        return Math.round((this.tempeture - 273.15) * 9 / 5 + 32)
+      }
+    }
   }
 }
 </script>

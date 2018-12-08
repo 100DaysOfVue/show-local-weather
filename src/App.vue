@@ -4,13 +4,21 @@
       :show="show"
       @changeShow="changeShow"
     />
-    <Weather v-else/>
+    <Weather v-else
+      :city="city"
+      :country="country"
+      :description="weatherDescription"
+      :tempeture="tempeture"
+      :weatherIcon="weatherIcon"
+    />
   </div>
 </template>
 
 <script>
 import Modal from './components/Modal.vue'
 import Weather from './components/Weather.vue'
+
+import api from './services/api.js'
 
 export default {
   name: 'app',
@@ -20,13 +28,30 @@ export default {
   },
   data () {
     return {
-      show: ''
+      show: '',
+      latitude: 0,
+      longitude: 0,
+      city: '',
+      country: '',
+      weatherDescription: '',
+      weatherIcon: '',
+      tempeture: 0
     }
   },
   methods: {
     changeShow (changeTo) {
       this.show = changeTo
+      if (changeTo === 'weather') {
+        api.searchWeatherByCoordinates(this.latitude, this.longitude, this)
+      }
     }
+  },
+  created: function () {
+    navigator.geolocation.getCurrentPosition(pos => {
+      const coor = pos.coords
+      this.latitude = coor.latitude
+      this.longitude = coor.longitude
+    })
   }
 }
 </script>
