@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <modal v-if="!this.show || this.show === 'search'"
-      :show="show"
-      @changeShow="changeShow"
-    />
-    <Weather v-else
+    <Weather
       :city="city"
       :country="country"
       :description="weatherDescription"
@@ -15,7 +11,6 @@
 </template>
 
 <script>
-import Modal from './components/Modal.vue'
 import Weather from './components/Weather.vue'
 
 import api from './services/api.js'
@@ -23,14 +18,10 @@ import api from './services/api.js'
 export default {
   name: 'app',
   components: {
-    Modal,
     Weather
   },
   data () {
     return {
-      show: '',
-      latitude: 0,
-      longitude: 0,
       city: '',
       country: '',
       weatherDescription: '',
@@ -39,18 +30,15 @@ export default {
     }
   },
   methods: {
-    changeShow (changeTo) {
-      this.show = changeTo
-      if (changeTo === 'weather') {
-        api.searchWeatherByCoordinates(this.latitude, this.longitude, this)
-      }
-    }
+    //,
+    // searchByCityName: (city, countryCode) {
+      
+      // }
   },
   created: function () {
     navigator.geolocation.getCurrentPosition(pos => {
       const coor = pos.coords
-      this.latitude = coor.latitude
-      this.longitude = coor.longitude
+      api.searchWeatherByCoordinates(coor.latitude, coor.longitude, this)
     })
   }
 }

@@ -1,6 +1,12 @@
 <template>
   <div class="weather">
-    <div class="weather__result">
+    <div v-if="!this.tempeture">
+      <p>Please allow the browser to know your location or perform a search</p>
+      <div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div v-else class="weather__result">
       <!-- <h2>weather in {{ city }}, {{ country }}</h2> -->
       <img :src="weatherIcon" alt="logo">
       <h2>{{ converTempeture }} <span>°{{ grades }}</span></h2>
