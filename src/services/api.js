@@ -35,4 +35,15 @@ openWeatherMapServices.searchWeatherByCoordinates = function (lat, long, _this) 
     .catch(logError)
 }
 
+openWeatherMapServices.searchWeatherByCityName = function (city, countryCode = null) {
+  let fetchUrl
+  (countryCode) ? fetchUrl = `${this.baseUrl}?q=${city},${countryCode}&type=like&appid=${this.apiKey}`
+    : fetchUrl = `${this.baseUrl}?q=${city}&type=like&appid=${this.apiKey}`
+  return fetch(fetchUrl)
+    .then(validate)
+    .then(resToJSON)
+    .then(res => console.log(res))
+    .catch(logError)
+}
+
 export default openWeatherMapServices
