@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import api from '../services/api.js'
-
 export default {
   name: 'search',
   data () {
@@ -22,18 +20,7 @@ export default {
   },
   methods: {
     submit: function (message) {
-      let city, countryCode
-      const messageSeparated = this.separateMessage(message)
-      if (messageSeparated.length === 2) {
-        city = messageSeparated[0]
-        countryCode = messageSeparated[1]
-      } else {
-        city = messageSeparated[0]
-      }
-      api.searchWeatherByCityName(city, countryCode)
-    },
-    separateMessage: function (message) {
-      return message.toLowerCase().split(',')
+      this.$emit('search', message)
     }
   }
 }

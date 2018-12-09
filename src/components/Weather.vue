@@ -12,7 +12,7 @@
       <h2>{{ converTempeture }} <span>°{{ grades }}</span></h2>
       <p>{{ description }}</p>
     </div>
-    <search />
+    <search v-on:search="search" />
   </div>
 </template>
 
@@ -34,6 +34,11 @@ export default {
   data () {
     return {
       grades: 'C'
+    }
+  },
+  methods: {
+    search: function (message) {
+      this.$emit('search', message)
     }
   },
   computed: {

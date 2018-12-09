@@ -6,6 +6,7 @@
       :description="weatherDescription"
       :tempeture="tempeture"
       :weatherIcon="weatherIcon"
+      v-on:search="searchByCityName"
     />
   </div>
 </template>
@@ -30,10 +31,21 @@ export default {
     }
   },
   methods: {
-    //,
-    // searchByCityName: (city, countryCode) {
-      
-      // }
+    searchByCityName: function (message) {
+      let city, countryCode
+      const separetedMessage = this.separateMessage(message)
+      if (separetedMessage.length >= 2) {
+        city = separetedMessage[0]
+        countryCode = separetedMessage[1]
+      } else {
+        city = separetedMessage[0]
+      }
+      // eslint-disable-next-line
+      (message) ? api.searchWeatherByCityName(city, countryCode) : ''
+    },
+    separateMessage: function (message) {
+      return message.toLowerCase().split(',')
+    }
   },
   created: function () {
     navigator.geolocation.getCurrentPosition(pos => {
