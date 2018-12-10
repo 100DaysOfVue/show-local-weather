@@ -93,7 +93,7 @@ body, html{
 }
 .btn{
   text-align: center;
-  padding: .6em .8em .8em;
+  padding: .3em .4em .4em;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -102,6 +102,13 @@ body, html{
   outline: 0;
   font-size: 24px;
   transition: .2s;
+}
+.btn__search{
+  font-size: 1.125em;
+  padding: .15em .2em .2em;
+  border: 2px solid lightgray;
+  border-bottom: 3px solid lightgray;
+  border-radius: 0;
 }
 .btn:active{
   transform: scale(.9);
@@ -122,10 +129,6 @@ body, html{
 }
 .search__field{
   padding: .5em;
-  width: 100px;
-  transition: .3s
-}
-.search__field:focus{
-  width: 250px;
+  width: 300px;
 }
 </style>
