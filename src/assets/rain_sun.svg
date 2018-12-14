@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- circle -->
+    <path d="M234.89 273.52c-48.35 0-87.6-37.97-87.6-84.75 0-46.77 39.25-84.74 87.6-84.74 48.36 0 87.61 37.97 87.61 84.74 0 46.78-39.25 84.75-87.61 84.75z" id="a"/>
+    <!-- rectangles of the sun  -->
+    <path d="M243.69 23.01v67.5c0 3.87-3.13 6.99-7.01 6.99h-3.58c-3.88 0-7.02-3.12-7.02-6.99v-67.5c0-3.86 3.14-6.99 7.02-6.99h3.58c3.88 0 7.01 3.13 7.01 6.99z" id="b"/>
+    <path d="M407.76 199.96h-70.63c-3.75 0-6.81-3.04-6.81-6.79v-3.46c0-3.75 3.06-6.79 6.81-6.79h70.63c3.76 0 6.8 3.04 6.8 6.79v3.46c0 3.75-3.04 6.79-6.8 6.79z" id="c"/>
+    <path d="M133.75 199.96H63.11c-3.76 0-6.8-3.04-6.8-6.79v-3.46c0-3.75 3.04-6.79 6.8-6.79h70.64c3.76 0 6.8 3.04 6.8 6.79v3.46c0 3.75-3.04 6.79-6.8 6.79z" id="d"/>
+    <path d="M346.08 89.94c-7.93 7.67-26.77 25.91-34.71 33.58a7.144 7.144 0 0 1-9.92 0c-1.5-1.45-1.04-1-2.54-2.45-2.7-2.63-2.7-6.97 0-9.59 7.94-7.69 26.78-25.91 34.72-33.59a7.144 7.144 0 0 1 9.92 0c1.5 1.45 1.03 1.01 2.53 2.46a6.655 6.655 0 0 1 0 9.59z" id="e"/>
+    <path d="M129.42 81.21c7.93 7.67 26.77 25.91 34.71 33.58a6.655 6.655 0 0 1 0 9.59c-1.5 1.45-1.04 1-2.54 2.45-2.76 2.68-7.15 2.68-9.92 0-7.92-7.67-26.78-25.89-34.71-33.58-2.71-2.62-2.71-6.96 0-9.59 1.5-1.45 1.04-1 2.54-2.45a7.144 7.144 0 0 1 9.92 0z" id="f"/>
+    <!-- cloud -->
+    <path d="M450.46 320.98c9.22-61.85-5.57-81.63-27.27-96.23-32.09-21.61-62.59-22.06-92.68 0-4.55-46.44-36.81-52.44-40.89-58.25-36.34-11.82-61.8-8.45-81.79 7.6-19.98 16.03-34.34 45.57-38.15 50.65-42.63-29.51-71.15-11.41-79.06-12.67-23.18 10.7-40.41 25.91-46.35 45.59-9.37 15.66-7.52 34.25 0 55.71-29.66 20.35-31.9 36.48-35.44 40.51-3.12 10.96-13.95 41.43 5.46 68.39 8.13 11.31 22.67 20.61 43.61 27.87h378.93c41.44-37.03 61.43-63.21 59.98-78.52-3.19-33.31-23.44-45.25-46.35-50.65z" id="g"/>
+    <linearGradient id="h" gradientUnits="userSpaceOnUse" x1="249.94" y1="159.44" x2="249.94" y2="450.15">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="57.352%" stop-color="#e6e6e6"/>
+      <stop offset="100%" stop-color="#9e9e9e"/>
+    </linearGradient>
+    <!-- raindrops from left to right from 1 to 4 -->
+    <!-- water drop 1 -->
+    <path d="M95.42 441.72c9.87 13.67 17.87 20.94 17.87 29.91 0 8.96-8 16.22-17.87 16.22-9.86 0-17.86-7.26-17.86-16.22 0-8.97 8-16.24 17.86-29.91z" id="i"/>
+    <!-- water drop 2 -->
+    <path d="M283.97 430.8c9.88 13.68 17.87 20.94 17.87 29.9 0 8.96-7.99 16.23-17.87 16.23-9.86 0-17.87-7.27-17.87-16.23s8.01-16.22 17.87-29.9z" id="j"/>
+    <!-- water drop 3 -->
+    <path d="M388.38 453.87c9.88 13.67 17.88 20.93 17.88 29.89 0 8.97-8 16.24-17.88 16.24-9.87 0-17.87-7.27-17.87-16.24 0-8.96 8-16.22 17.87-29.89z" id="k"/>
+    <!-- water drop 4 -->
+    <path d="M184.51 414.03c9.88 13.67 17.88 20.94 17.88 29.91 0 8.95-8 16.22-17.88 16.22-9.85 0-17.87-7.27-17.87-16.22 0-8.97 8.02-16.24 17.87-29.91z" id="l"/>
+  </defs>
+  <!-- circle sun use -->
+  <use xlink:href="#a" fill="#ffcb00"/>
+  <use xlink:href="#a" fill-opacity="0" stroke="#000" stroke-width="1.5"/>
+  <!-- rectangels of the sun use group -->
+  <g>
+    <use xlink:href="#b" fill="#ffcb00"/>
+    <use xlink:href="#b" fill-opacity="0" stroke="#717171"/>
+    <use xlink:href="#c" fill="#ffcb00"/>
+    <use xlink:href="#c" fill-opacity="0" stroke="#717171"/>
+    <use xlink:href="#d" fill="#ffcb00"/>
+    <use xlink:href="#d" fill-opacity="0" stroke="#717171"/>
+    <use xlink:href="#e" fill="#ffe069"/>
+    <use xlink:href="#e" fill-opacity="0" stroke="#717171"/>
+    <use xlink:href="#f" fill="#ffe069"/>
+    <use xlink:href="#f" fill-opacity="0" stroke="#717171"/>
+  </g>
+  <!-- cloud use -->
+  <use xlink:href="#g" fill="url(#h)"/>
+  <use xlink:href="#g" fill-opacity="0" stroke="#000" stroke-width="1.5"/>
+  <!-- raindrops use group -->
+  <!-- from left to right from 1 to 4 -->
+  <g>
+    <use xlink:href="#i" fill="#003cc1"/>
+    <use xlink:href="#i" fill-opacity="0" stroke="#000" stroke-opacity="0"/>
+    <use xlink:href="#j" fill="#003cc1"/>
+    <use xlink:href="#j" fill-opacity="0" stroke="#000" stroke-opacity="0"/>
+    <use xlink:href="#k" fill="#003cc1"/>
+    <use xlink:href="#k" fill-opacity="0" stroke="#000" stroke-opacity="0"/>
+    <use xlink:href="#l" fill="#003cc1"/>
+    <use xlink:href="#l" fill-opacity="0" stroke="#000" stroke-opacity="0"/>
+  </g>
+</svg>
