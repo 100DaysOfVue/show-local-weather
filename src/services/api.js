@@ -1,3 +1,5 @@
+import iconsCases from './icons-cases.js'
+
 const openWeatherMapServices = {
   baseUrl: 'https://api.openweathermap.org/data/2.5/weather',
   apiKey: 'a69cb8c119acf257033dba8e68bc589a'
@@ -30,7 +32,7 @@ openWeatherMapServices.searchWeatherByCoordinates = function (lat, long, _this) 
       _this.city = res.name
       _this.country = res.sys.country
       _this.tempeture = res.main.temp
-      _this.weatherIcon = `https://openweathermap.org/img/w/${res.weather[0].icon}.png`
+      _this.weatherIcon = iconsCases[res.weather[0].icon]
     })
     .catch(logError)
 }

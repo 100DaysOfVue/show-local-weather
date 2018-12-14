@@ -8,7 +8,7 @@
     </div>
     <div v-else class="weather__result">
       <!-- <h2>weather in {{ city }}, {{ country }}</h2> -->
-      <img :src="weatherIcon" alt="logo">
+      <img :src="imagePath(weatherIcon)" :alt="description + ' icon'" >
       <h2>{{ converTempeture }} <span>°{{ grades }}</span></h2>
       <p>{{ description }}</p>
     </div>
@@ -39,6 +39,9 @@ export default {
   methods: {
     search: function (message) {
       this.$emit('search', message)
+    },
+    imagePath: function (pic) {
+      return require(`../assets/${pic}.svg`)
     }
   },
   computed: {
@@ -52,3 +55,4 @@ export default {
   }
 }
 </script>
+
