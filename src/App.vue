@@ -131,4 +131,158 @@ body, html{
   padding: .5em;
   width: 300px;
 }
+/* icons components */
+/* sun animations */
+.sun__circle{
+  animation: change-opacity-fill 3s ease-in-out forwards;
+}
+
+@keyframes change-opacity-fill {
+  0%{
+    fill-opacity: 1
+  }
+  5%, 20%, 40%, 60%, 80%, 93%{
+    fill-opacity: .5
+  }
+  10%, 30%, 50%, 70%, 90%{
+    fill-opacity: .7
+  }
+  95%{
+    fill-opacity: .9
+  }
+  100%{
+    fill-opacity: 1
+  }
+}
+
+.sun__rectangles--bright {
+  animation: change-bright-fill 3s ease-in-out forwards;
+}
+
+@keyframes change-bright-fill {
+  0%{
+    fill: #ffcb00;
+  }
+  5%, 20%, 40%, 60%, 80%, 95% {
+    fill: #ffe069
+  }
+  10%, 30%, 50%, 70%, 90%{
+    fill: #ffcb00
+  }
+  100%{
+    fill: #ffcb00
+  }
+}
+.sun__rectangles--dark {
+  animation: change-dark-fill 3s ease-in-out forwards;
+}
+
+@keyframes change-dark-fill {
+  0%{
+    fill: #ffe069;
+  }
+  6%, 24%, 44%, 64%, 84%, 96% {
+    fill: #ffcb00
+  }
+  12%, 34%, 54%, 74%, 94%{
+    fill: #ffe069
+  }
+  100%{
+    fill: #ffe069;
+  }
+}
+.waterdrop{
+  animation: raindrops 3s ease-in-out forwards
+}
+
+@keyframes raindrops {
+  0%, 100%{
+    fill-opacity: 1
+  }
+  5%, 25%, 45%, 65%, 85%, 98%{
+    fill-opacity: 0
+  }
+  15%, 35%, 55%, 75%, 95%{
+    fill-opacity: 1
+  }
+}
+/* raindrops */
+.waterdrop:first-child{
+  animation-delay: 100ms
+}
+.waterdrop:nth-child(2){
+  animation-delay: 200ms;
+}
+.waterdrop:last-child{
+  animation-delay: 150ms;
+}
+/* scattered clouds */
+#leftCloud{
+  animation: left-cloud 3s cubic-bezier(0.42, 0, 0.97, 0.44);
+}
+@keyframes left-cloud {
+  0%{
+    transform: translateX(50%)
+  }
+  50%{
+    transform: translateY(45px)
+  }
+}
+#rightCloud{
+  animation: right-cloud 3s cubic-bezier(0.42, 0, 0.97, 0.44);
+}
+@keyframes right-cloud {
+  0%{
+    transform: translateX(-45%)
+  }
+  50%{
+    transform: translateY(-55px)
+  }
+}
+/* moon */
+.star{
+  animation: star-blink 3s;
+}
+.star:first-child{
+  animation-delay: 400ms;
+}
+@keyframes star-blink {
+  0%,20%,40%,60%,80%,95%{
+    opacity: 0;
+  }
+  10%, 30%,50%,70%,90%,100%{
+    opacity: 1;
+  }
+}
+/* snowflakes */
+.snowflake{
+  animation: blinking 3s ease-in-out;
+}
+.snowflake:last-child{
+  animation-delay: 300ms
+}
+.snowflake:first-child{
+  animation-delay: 150ms
+}
+@keyframes blinking {
+  0%, 20%, 40%, 60%, 80%, 95%{
+    opacity: 0;
+  }
+  10%, 30%, 50%, 70%, 90%, 100%{
+    opacity: 1;
+  }
+}
+/* lightnings */
+.lightning{
+  animation: blinking 3s ease-in-out;
+}
+.lightning:last-child{
+  animation-delay: 300ms
+}
+.lightning:first-child{
+  animation-delay: 150ms
+}
+#dark__cloud{
+  animation: 3s blinking ease-in-out;
+}
 </style>

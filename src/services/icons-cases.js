@@ -2,7 +2,7 @@ const iconsCases = {
   '01d': 'ClearSkySun',
   '01n': 'ClearSkyMoon',
   '02d': 'FewCloudsSun',
-  '02n': 'FewcloudsMoon',
+  '02n': 'FewCloudsMoon',
   '03d': 'ScatteredClouds',
   '03n': 'ScatteredClouds',
   '04d': 'BrokenClouds',
