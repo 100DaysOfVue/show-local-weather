@@ -7,8 +7,7 @@
       </div>
     </div>
     <div v-else class="weather__result">
-      <!-- <h2>weather in {{ city }}, {{ country }}</h2> -->
-      <img :src="imagePath(weatherIcon)" :alt="description + ' icon'" >
+      <DynamicIcon :weatherIcon="weatherIcon" />
       <h2>{{ converTempeture }} <span>°{{ grades }}</span></h2>
       <p>{{ description }}</p>
     </div>
@@ -18,11 +17,12 @@
 
 <script>
 import Search from './Search.vue'
+import DynamicIcon from './DynamicIcon.vue'
 
 export default {
   name: 'weather',
   components: {
-    Search
+    Search, DynamicIcon
   },
   props: {
     city: String,
