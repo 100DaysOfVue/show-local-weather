@@ -4,7 +4,7 @@
       :city="city"
       :country="country"
       :description="weatherDescription"
-      :tempeture="tempeture"
+      :temperature="temperature"
       :weatherIcon="weatherIcon"
       v-on:search="searchByCityName"
     />
@@ -27,7 +27,7 @@ export default {
       country: '',
       weatherDescription: '',
       weatherIcon: '',
-      tempeture: 0
+      temperature: 0
     }
   },
   methods: {
@@ -65,31 +65,6 @@ body, html{
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   height: 100%;
-}
-/* modal component */
-.modal__overlay{
-  background: rgba(0, 0, 0, .8);
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal{
-  width: 650px;
-  background-color: white;
-  padding: 2em;
-  border-radius: 1.5em;
-  text-align: center;
-  position: relative;
-}
-.modal__buttons{
-  display: flex;
-  justify-content: space-around;
 }
 .btn{
   text-align: center;

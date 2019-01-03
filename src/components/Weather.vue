@@ -1,15 +1,20 @@
 <template>
   <div class="weather">
-    <div v-if="!this.tempeture">
+    <div v-if="!this.temperature">
       <p>Please allow the browser to know your location or perform a search</p>
       <div>
         <p>Loading...</p>
       </div>
     </div>
     <div v-else class="weather__result">
-      <DynamicIcon :weatherIcon="weatherIcon" />
-      <h2>{{ converTempeture }} <span>°{{ grades }}</span></h2>
-      <p>{{ description }}</p>
+      <div class="weather__data">
+        <h1 class="weather__temperature">{{ converTemperature }} <sup class="weather__temperature--unit">°{{ grades }}</sup></h1>
+        <p class="weather__description">{{ description }}</p>
+        <p class="weather__location"><small>{{ city }}, {{ country }}</small></p>
+      </div>
+      <div class="weather__icon__container">
+        <dynamic-icon class="icon" :weatherIcon="weatherIcon" />
+      </div>
     </div>
     <search v-on:search="search" />
   </div>
@@ -28,7 +33,7 @@ export default {
     city: String,
     country: String,
     description: String,
-    tempeture: Number,
+    temperature: Number,
     weatherIcon: String
   },
   data () {
@@ -45,13 +50,49 @@ export default {
     }
   },
   computed: {
-    converTempeture () {
+    converTemperature () {
       if (this.grades === 'C') {
-        return Math.round(this.tempeture - 273)
+        return Math.round(this.temperature - 273)
       } else {
-        return Math.round((this.tempeture - 273.15) * 9 / 5 + 32)
+        return Math.round((this.temperature - 273.15) * 9 / 5 + 32)
       }
     }
   }
 }
 </script>
+
+<style scoped>
+.weather__result{
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.weather__data{
+  width: 100%;
+  height: 100%;
+}
+.weather__temperature{
+  font-size: 4.5em;
+  margin: .1em auto;
+}
+.weather__temperature--unit{
+  font-size: .6em;
+}
+p{
+  margin: 0 auto;
+}
+.weather__description{
+  font-size: 1.5em;
+}
+.weather__icon__container{
+  width: 100%;
+  height: 100%;
+}
+.icon{
+  height: 100%;
+  width: 43%;
+}
+</style>
