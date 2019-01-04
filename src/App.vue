@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     searchByCityName: function (message) {
+      this.resetWeatherData()
       let city, countryCode
       const separetedMessage = this.separateMessage(message)
       if (separetedMessage.length >= 2) {
@@ -47,6 +48,13 @@ export default {
     },
     separateMessage: function (message) {
       return message.toLowerCase().split(',')
+    },
+    resetWeatherData: function () {
+      this.city = ''
+      this.country = ''
+      this.weatherDescription = ''
+      this.weatherIcon = ''
+      this.temperature = 0
     }
   },
   created: function () {

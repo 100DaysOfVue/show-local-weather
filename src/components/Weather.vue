@@ -9,9 +9,9 @@
       </div>
       <div v-else class="weather__result" key="result">
         <div class="weather__data">
-            <h1 class="weather__temperature">{{ converTemperature }} <sup class="weather__temperature--unit">°{{ grades }}</sup></h1>
-            <p class="weather__description">{{ weatherDescription }}</p>
-            <p class="weather__location"><small>{{ city }}, {{ country }}</small></p>
+          <h1 class="weather__temperature">{{ converTemperature }} <sup class="weather__temperature--unit">°{{ grades }}</sup></h1>
+          <p class="weather__description">{{ weatherDescription }}</p>
+          <p class="weather__location"><small>{{ city }}, {{ country }}</small></p>
         </div>
         <div class="weather__icon__container">
           <dynamic-icon class="icon" :weatherIcon="weatherIcon" />
@@ -116,8 +116,9 @@ p{
   animation: slide-reversed .8s ease-out;
 }
 .icon{
-  height: 100%;
-  width: 90%;
+  height: 90%;
+  width: 80%;
+  margin: 2% auto;
 }
 .fade-enter-active{
   animation: fade-in .5s;
