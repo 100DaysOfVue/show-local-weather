@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <search v-on:search="searchByCityName" />
     <Weather
       :city="city"
       :country="country"
@@ -13,13 +14,14 @@
 
 <script>
 import Weather from './components/Weather.vue'
+import Search from './components/Search.vue'
 
 import api from './services/api.js'
 
 export default {
   name: 'app',
   components: {
-    Weather
+    Weather, Search
   },
   data () {
     return {
@@ -41,7 +43,7 @@ export default {
         city = separetedMessage[0]
       }
       // eslint-disable-next-line
-      (message) ? api.searchWeatherByCityName(city, countryCode) : ''
+      (message) ? api.searchWeatherByCityName(city, countryCode, this) : ''
     },
     separateMessage: function (message) {
       return message.toLowerCase().split(',')

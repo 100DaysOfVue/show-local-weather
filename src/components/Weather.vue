@@ -18,18 +18,16 @@
         </div>
       </div>
     </transition>
-    <search v-on:search="search" />
   </div>
 </template>
 
 <script>
-import Search from './Search.vue'
 import DynamicIcon from './DynamicIcon.vue'
 
 export default {
   name: 'weather',
   components: {
-    Search, DynamicIcon
+    DynamicIcon
   },
   props: {
     city: String,
@@ -44,9 +42,6 @@ export default {
     }
   },
   methods: {
-    search: function (message) {
-      this.$emit('search', message)
-    },
     imagePath: function (pic) {
       return require(`../assets/${pic}.svg`)
     }

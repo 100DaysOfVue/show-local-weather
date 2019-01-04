@@ -37,14 +37,21 @@ openWeatherMapServices.searchWeatherByCoordinates = function (lat, long, _this) 
     .catch(logError)
 }
 
-openWeatherMapServices.searchWeatherByCityName = function (city, countryCode = null) {
+openWeatherMapServices.searchWeatherByCityName = function (city, countryCode = null, _this) {
   let fetchUrl
   (countryCode) ? fetchUrl = `${this.baseUrl}?q=${city},${countryCode}&type=like&appid=${this.apiKey}`
     : fetchUrl = `${this.baseUrl}?q=${city}&type=like&appid=${this.apiKey}`
   return fetch(fetchUrl)
     .then(validate)
     .then(resToJSON)
-    .then(res => console.log(res))
+    .then(res => {
+      console.log(res)
+      _this.weatherDescription = res.weather[0].description
+      _this.city = res.name
+      _this.country = res.sys.country
+      _this.temperature = res.main.temp
+      _this.weatherIcon = iconsCases[res.weather[0].icon]
+    })
     .catch(logError)
 }
 
