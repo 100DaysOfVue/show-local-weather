@@ -72,30 +72,33 @@ body, html{
   padding: 0;
   height: 100%;
 }
+:root{
+  --results-height: 150px;
+  --results-width: 50%;
+  --temperature-size: 4.5em;
+  --description-size: 1.5em;
+  --search-bar-width: 300px;
+  --search-bar-height: 20px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   height: 100%;
 }
-.btn{
-  text-align: center;
-  padding: .3em .4em .4em;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  color: white;
-  background-color: lightgray;
-  outline: 0;
-  font-size: 24px;
-  transition: .2s;
-}
 .btn__search{
+  height: calc(var(--search-bar-height) + 17px);
   font-size: 1.125em;
   padding: .15em .2em .2em;
+  color: white;
+  background-color: lightgray;
   border: 2px solid lightgray;
   border-bottom: 3px solid lightgray;
   border-radius: 0;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  transition: .2s;
 }
-.btn:active{
+.btn__search:active{
   transform: scale(.9);
 }
 /* Weather component */
@@ -111,10 +114,12 @@ body, html{
   position: absolute;
   right: 0;
   top: 0;
+  width: var(--search-bar-width);
 }
 .search__field{
   padding: .5em;
-  width: 300px;
+  width: calc(100% - 86px);
+  height: var(--search-bar-height);
 }
 /* icons components */
 /* sun animations */

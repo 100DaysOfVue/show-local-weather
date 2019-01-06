@@ -6,7 +6,7 @@
       placeholder="Washintong,us"
       class="search__field"
     />
-    <button @click="submit(message)" class="btn  btn__search">Search</button>
+    <button @click="submit(message)" class="btn__search">Search</button>
   </div>
 </template>
 

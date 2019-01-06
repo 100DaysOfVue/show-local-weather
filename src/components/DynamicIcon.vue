@@ -11,20 +11,22 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       icon: null
     }
   },
   computed: {
     loader () {
-      return () =>  import(`./icons/${this.weatherIcon}.vue`)
+      return () => import(`./icons/${this.weatherIcon}.vue`)
     }
   },
   mounted () {
     this.loader()
+      /* eslint-disable */
       .then(() => this.icon = () => this.loader())
       .catch(() => this.icon = () => import(`./icons/${this.weatherIcon}.vue`))
+      /* eslint-enable */
   }
 }
 </script>

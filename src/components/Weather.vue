@@ -63,10 +63,10 @@ export default {
 
 <style scoped>
 .weather__result{
-  width: 50%;
+  width: var(--results-width);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 150px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: var(--results-height);
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: -3px 3px 5px 0 darkgray;
@@ -76,7 +76,7 @@ export default {
   height: 100%;
 }
 .weather__temperature{
-  font-size: 4.5em;
+  font-size: var(--temperature-size);
   margin: .1em auto;
   animation: slide .8s ease-in;
 }
@@ -88,7 +88,7 @@ p{
   margin: 0 auto;
 }
 .weather__description{
-  font-size: 1.5em;
+  font-size: var(--description-size);
   animation: slide-reversed .8s ease-in;
 }
 .weather__location{
