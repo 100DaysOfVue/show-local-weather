@@ -5,14 +5,10 @@ const openWeatherMapServices = {
   apiKey: 'a69cb8c119acf257033dba8e68bc589a'
 }
 
-// error to log if response is non a 200-299
-function logError (err) {
-  console.log('Looks like was a problem:\n', err)
-}
 // to validate if response is 200-299
 function validate (res) {
   if (!res.ok) {
-    throw Error(res.status)
+    throw new Error(res.status)
   }
   return res
 }
@@ -27,14 +23,16 @@ openWeatherMapServices.searchWeatherByCoordinates = function (lat, long, _this) 
     .then(validate)
     .then(resToJSON)
     .then(res => {
-      console.log(res)
+      _this.loading = false
       _this.weatherDescription = res.weather[0].description
       _this.city = res.name
       _this.country = res.sys.country
       _this.temperature = res.main.temp
       _this.weatherIcon = iconsCases[res.weather[0].icon]
     })
-    .catch(logError)
+    .catch(err => {
+      console.log('Looks like was a problem:\n', err)
+    })
 }
 
 openWeatherMapServices.searchWeatherByCityName = function (city, countryCode = null, _this) {
@@ -46,13 +44,23 @@ openWeatherMapServices.searchWeatherByCityName = function (city, countryCode = n
     .then(resToJSON)
     .then(res => {
       console.log(res)
+      _this.loading = false
       _this.weatherDescription = res.weather[0].description
       _this.city = res.name
       _this.country = res.sys.country
       _this.temperature = res.main.temp
       _this.weatherIcon = iconsCases[res.weather[0].icon]
     })
-    .catch(logError)
+    // error to log if response is non a 200-299
+    // for avoid this use axios in component
+    // check:
+    // https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html#Dealing-with-Errors
+    .catch((err) => {
+      console.log('Looks like was a problem:\n', err)
+      _this.loading = false
+      _this.errored = true
+      _this.errorMessage = err.message
+    })
 }
 
 export default openWeatherMapServices

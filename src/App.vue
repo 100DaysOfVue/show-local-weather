@@ -2,6 +2,9 @@
   <div id="app">
     <search v-on:search="searchByCityName" />
     <Weather
+      :loading="loading"
+      :errored="errored"
+      :errorMessage="errorMessage"
       :city="city"
       :country="country"
       :description="weatherDescription"
@@ -25,6 +28,9 @@ export default {
   },
   data () {
     return {
+      loading: true,
+      errored: false,
+      errorMessage: '',
       city: '',
       country: '',
       weatherDescription: '',
@@ -34,7 +40,6 @@ export default {
   },
   methods: {
     searchByCityName: function (message) {
-      this.resetWeatherData()
       let city, countryCode
       const separetedMessage = this.separateMessage(message)
       if (separetedMessage.length >= 2) {
@@ -43,13 +48,19 @@ export default {
       } else {
         city = separetedMessage[0]
       }
-      // eslint-disable-next-line
-      (message) ? api.searchWeatherByCityName(city, countryCode, this) : ''
+      if (!message) return
+      // for apropiate animation when component unmoun and mount
+      // when new properties arrive
+      this.resetWeatherData()
+      api.searchWeatherByCityName(city, countryCode, this)
     },
     separateMessage: function (message) {
       return message.toLowerCase().split(',')
     },
     resetWeatherData: function () {
+      this.loading = true
+      this.errored = false
+      this.errorMessage = ''
       this.city = ''
       this.country = ''
       this.weatherDescription = ''

@@ -1,22 +1,29 @@
 <template>
   <div class="weather">
     <transition name="fade" mode="out-in">
-      <div v-if="!this.temperature" key="loading">
-        <p>Please allow the browser to know your location or perform a search</p>
-        <div>
-          <p>Loading...</p>
+
+        <div v-if="this.loading" key="loading">
+          <p>Please allow the browser to know your location or perform a search</p>
+          <div>
+            <p>Loading...</p>
+          </div>
         </div>
-      </div>
-      <div v-else class="weather__result" key="result">
-        <div class="weather__data">
-          <h1 class="weather__temperature">{{ converTemperature }} <sup class="weather__temperature--unit">°{{ grades }}</sup></h1>
-          <p class="weather__description">{{ weatherDescription }}</p>
-          <p class="weather__location"><small>{{ city }}, {{ country }}</small></p>
+
+        <div v-else-if="this.errored" key="error">
+          <p>We're sorry, an error has happen</p>
         </div>
-        <div class="weather__icon__container">
-          <dynamic-icon class="icon" :weatherIcon="weatherIcon" />
+
+        <div v-else class="weather__result" key="result">
+          <div class="weather__data">
+            <h1 class="weather__temperature">{{ converTemperature }} <sup class="weather__temperature--unit">°{{ grades }}</sup></h1>
+            <p class="weather__description">{{ weatherDescription }}</p>
+            <p class="weather__location"><small>{{ city }}, {{ country }}</small></p>
+          </div>
+          <div class="weather__icon__container">
+            <dynamic-icon class="icon" :weatherIcon="weatherIcon" />
+          </div>
         </div>
-      </div>
+
     </transition>
   </div>
 </template>
@@ -30,6 +37,12 @@ export default {
     DynamicIcon
   },
   props: {
+    loading: Boolean,
+    errored: {
+      type: Boolean,
+      required: true
+    },
+    errorMessage: String,
     city: String,
     country: String,
     description: String,
@@ -39,11 +52,6 @@ export default {
   data () {
     return {
       grades: 'C'
-    }
-  },
-  methods: {
-    imagePath: function (pic) {
-      return require(`../assets/${pic}.svg`)
     }
   },
   computed: {
