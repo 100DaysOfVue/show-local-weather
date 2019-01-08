@@ -10,7 +10,12 @@
         </div>
 
         <div v-else-if="this.errored" key="error">
-          <p>We're sorry, an error has happen</p>
+          <div v-if="errorMessage == 404">
+            <h2>Ups!</h2>
+            <h3>Looks like you had a typo error.</h3>
+            <h3>Please try again.</h3>
+          </div>
+          <h2 v-else>Sorry an error has happened.</h2>
         </div>
 
         <div v-else class="weather__result" key="result">
