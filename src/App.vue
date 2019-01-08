@@ -80,6 +80,34 @@ body, html{
   --search-bar-width: 300px;
   --search-bar-height: 20px;
 }
+/* media queries to work: */
+@media screen and (max-width: 1024px){
+  :root{
+    --results-width: 60%;
+  }
+}
+
+@media screen and (max-width: 860px){
+  :root{
+    --results-width: 80%;
+    --search-bar-width: 100%;
+    --search-bar-height: 28px;
+  }
+}
+
+@media screen and (max-width: 640px){
+  :root{
+    --results-width: 80%;
+    --temperature-size: 3.5em;
+    --description-size: 1.2em;
+    --search-bar-width: 100%;
+    --search-bar-height: 35px;
+  }
+  .weather_result{
+    padding: 4px;
+  }
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   height: 100%;
@@ -91,7 +119,6 @@ body, html{
   color: white;
   background-color: lightgray;
   border: 2px solid lightgray;
-  border-bottom: 3px solid lightgray;
   border-radius: 0;
   text-align: center;
   cursor: pointer;
