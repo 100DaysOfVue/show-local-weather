@@ -129,10 +129,10 @@ p{
   margin: 2% auto;
 }
 .fade-enter-active{
-  animation: fade-in .5s;
+  animation: fade-in .3s;
 }
 .fade-leave-active{
-  animation: fade-in .5s reverse;
+  animation: fade-in .1s reverse;
 }
 @keyframes fade-in {
   0% {
