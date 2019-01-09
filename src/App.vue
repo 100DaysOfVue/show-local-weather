@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <search v-on:search="searchByCityName" />
+
     <Weather
       :loading="loading"
       :errored="errored"
@@ -12,19 +13,22 @@
       :weatherIcon="weatherIcon"
       v-on:search="searchByCityName"
     />
+
+    <Footer />
   </div>
 </template>
 
 <script>
 import Weather from './components/Weather.vue'
 import Search from './components/Search.vue'
+import Footer from './components/Footer.vue';
 
 import api from './services/api.js'
 
 export default {
   name: 'app',
   components: {
-    Weather, Search
+    Weather, Search, Footer
   },
   data () {
     return {
@@ -90,6 +94,7 @@ body, html{
   --description-size: 1.5em;
   --search-bar-width: 300px;
   --search-bar-height: 20px;
+  --footer-height: 80px;
 }
 /* media queries to work: */
 @media screen and (max-width: 1024px){
@@ -113,9 +118,13 @@ body, html{
     --description-size: 1.2em;
     --search-bar-width: 100%;
     --search-bar-height: 35px;
+    --footer-height: 105px;
   }
   .weather_result{
     padding: 4px;
+  }
+  .footer{
+    font-size: 1.3em;
   }
 }
 
@@ -130,6 +139,7 @@ body, html{
   color: white;
   background-color: lightgray;
   border: 2px solid lightgray;
+  border-bottom: 3px solid lightgray;
   border-radius: 0;
   text-align: center;
   cursor: pointer;
@@ -141,7 +151,7 @@ body, html{
 }
 /* Weather component */
 .weather{
-  height: 100%;
+  min-height: calc(100% - (var(--footer-height) + 4px));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,6 +168,15 @@ body, html{
   padding: .5em;
   width: calc(100% - 86px);
   height: var(--search-bar-height);
+}
+.footer{
+  height: var(--footer-height);
+  background: lightcoral;
+  text-align: center;
+  padding: 2px
+}
+.footer p {
+  margin: .40em;
 }
 /* icons components */
 /* sun animations */
