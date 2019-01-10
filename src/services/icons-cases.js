@@ -15,8 +15,8 @@ const iconsCases = {
   '11n': 'Thunderstorm',
   '13d': 'Snow',
   '13n': 'Snow',
-  '50d': 'https://openweathermap.org/img/w/50d.png',
-  '50n': 'https://openweathermap.org/img/w/50d.png'
+  '50d': 'Mist',
+  '50n': 'Mist'
 }
 
 export default iconsCases
