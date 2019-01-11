@@ -21,7 +21,7 @@
 <script>
 import Weather from './components/Weather.vue'
 import Search from './components/Search.vue'
-import Footer from './components/Footer.vue';
+import Footer from './components/Footer.vue'
 
 import api from './services/api.js'
 
@@ -82,6 +82,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
+
 body, html{
   margin: 0;
   padding: 0;
@@ -129,7 +131,7 @@ body, html{
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   height: 100%;
 }
 .btn__search{
