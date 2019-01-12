@@ -96,7 +96,11 @@ body, html{
   --description-size: 1.5em;
   --search-bar-width: 300px;
   --search-bar-height: 20px;
-  --footer-height: 80px;
+  --footer-height: 82px;
+  --footer-color: hsl(18, 100%, 73%);
+  --weather-background-color: hsl(0, 0%, 90%);
+  --links-color: hsl(240, 2%, 23%);
+  --btn-background-color: hsl(18, 95%, 65%);
 }
 /* media queries to work: */
 @media screen and (max-width: 1024px){
@@ -139,9 +143,9 @@ body, html{
   font-size: 1.125em;
   padding: .15em .2em .2em;
   color: white;
-  background-color: lightgray;
-  border: 2px solid lightgray;
-  border-bottom: 3px solid lightgray;
+  background-color: var(--btn-background-color);
+  border: 2px solid var(--btn-background-color);
+  border-bottom: 3px solid var(--btn-background-color);
   border-radius: 0;
   text-align: center;
   cursor: pointer;
@@ -154,6 +158,7 @@ body, html{
 /* Weather component */
 .weather{
   min-height: calc(100% - (var(--footer-height) + 4px));
+  background-color: var(--weather-background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,12 +178,16 @@ body, html{
 }
 .footer{
   height: var(--footer-height);
-  background: lightcoral;
+  background-color: var(--footer-color);
   text-align: center;
   padding: 2px
 }
 .footer p {
   margin: .40em;
+}
+a{
+  text-decoration: none;
+  color: var(--links-color);
 }
 /* icons components */
 /* sun animations */

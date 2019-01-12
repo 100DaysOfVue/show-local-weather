@@ -80,9 +80,10 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: var(--results-height);
-  border: 1px solid black;
+  border: 1px solid var(--footer-color);
   border-radius: 5px;
-  box-shadow: -3px 3px 5px 0 darkgray;
+  box-shadow: -3px 3px 35px 0 var(--footer-color);
+  background: linear-gradient(to bottom , hsl(18, 100%, 80%)0%, hsl(18,100%,95%) 100%);
 }
 .weather__data{
   width: 100%;
