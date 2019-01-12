@@ -139,13 +139,13 @@ body, html{
     --description-size: 1.2em;
     --search-bar-width: 100%;
     --search-bar-height: 35px;
-    --footer-height: 105px;
+    --footer-height: 85px;
   }
   .weather_result{
     padding: 4px;
   }
   .footer{
-    font-size: 1.3em;
+    font-size: 1em;
   }
 }
 
