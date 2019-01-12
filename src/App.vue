@@ -269,19 +269,7 @@ a{
   }
 }
 .waterdrop{
-  animation: raindrops 3s ease-in-out forwards
-}
-
-@keyframes raindrops {
-  0%, 100%{
-    fill-opacity: 1
-  }
-  5%, 25%, 45%, 65%, 85%, 98%{
-    fill-opacity: 0
-  }
-  15%, 35%, 55%, 75%, 95%{
-    fill-opacity: 1
-  }
+  animation: blinking 3s ease-in-out forwards
 }
 /* raindrops */
 .waterdrop:first-child{
@@ -318,18 +306,10 @@ a{
 }
 /* moon */
 .star{
-  animation: star-blink 3s;
+  animation: blinking 3s;
 }
 .star:first-child{
   animation-delay: 400ms;
-}
-@keyframes star-blink {
-  0%,20%,40%,60%,80%,95%{
-    opacity: 0;
-  }
-  10%, 30%,50%,70%,90%,100%{
-    opacity: 1;
-  }
 }
 /* snowflakes */
 .snowflake{
