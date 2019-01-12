@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <p>
-        <strong>Powered by <a href="https://openweathermap.org" target="_blank">OpenWeaterMap</a></strong>
+        <strong>Powered by <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a></strong>
     </p>
     <p>
       <strong>

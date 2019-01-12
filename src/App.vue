@@ -84,6 +84,21 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700');
 
+form, input, button{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+:focus{
+  outline:0;
+}
+
 body, html{
   margin: 0;
   padding: 0;
@@ -138,26 +153,9 @@ body, html{
   font-family: 'Lato', sans-serif;
   height: 100%;
 }
-.btn__search{
-  height: calc(var(--search-bar-height) + 17px);
-  font-size: 1.125em;
-  padding: .15em .2em .2em;
-  color: white;
-  background-color: var(--btn-background-color);
-  border: 2px solid var(--btn-background-color);
-  border-bottom: 3px solid var(--btn-background-color);
-  border-radius: 0;
-  text-align: center;
-  cursor: pointer;
-  outline: 0;
-  transition: .2s;
-}
-.btn__search:active{
-  transform: scale(.9);
-}
 /* Weather component */
 .weather{
-  min-height: calc(100% - (var(--footer-height) + 4px));
+  min-height: calc(100% - (var(--footer-height) + 5px));
   background-color: var(--weather-background-color);
   display: flex;
   justify-content: center;
@@ -173,9 +171,30 @@ body, html{
 }
 .search__field{
   padding: .5em;
-  width: calc(100% - 86px);
+  width: calc(100% - 83px);
   height: var(--search-bar-height);
 }
+.search__field:focus{
+  box-shadow: 3px 3px 5px 0 var(--btn-background-color)
+}
+.btn__search{
+  height: calc(var(--search-bar-height) + 16px);
+  font-size: 1.125em;
+  padding: .15em .2em .2em;
+  color: white;
+  background-color: var(--btn-background-color);
+  border: 2px solid var(--btn-background-color);
+  border-bottom: 3px solid var(--btn-background-color);
+  border-radius: 0;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  transition: .2s;
+}
+.btn__search:active{
+  transform: scale(.9);
+}
+/* footer component */
 .footer{
   height: var(--footer-height);
   background-color: var(--footer-color);
